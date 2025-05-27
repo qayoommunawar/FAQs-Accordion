@@ -1,0 +1,170 @@
+/* CSS resests by Josh Camaue */
+
+
+/* ----------------- */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin & padding*/
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 6. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 7. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 8. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  /*
+    10. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+/* ---------------- */
+
+/* CSS Variables For Colors , Gaps & Fonts */
+
+:root{
+    /* colors */
+    --color-white: hsl(0, 100%, 100%);
+    --color-purple-100: hsl(275, 100%, 97%);
+    --color-purple-600: hsl(292, 16%, 49%);
+    --color-purple-900: hsl(292, 42%, 14%);
+
+    /* gaps*/
+     --gap-lg: 2rem;
+     --gap-md: 1.5rem;
+     --gap-sml: 1rem;
+
+    /* fonts */
+    --font-main: "Work Sans", sans-serif; 
+}
+
+
+/* ---------------- */
+
+/* Styling the body & its background*/
+
+body{
+    font-family: var(--font-main);
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-purple-100);
+    position: relative;
+    padding: var(--gap-lg);
+}
+
+body::after{
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    background: url('assets/images/background-pattern-mobile.svg');
+    z-index: -1;
+}
+
+
+
+
+/* Styling the wrapper*/
+
+
+.wrapper{
+    max-width: 37rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--gap-md);
+    background-color: var(--color-white);
+    border-radius: var(--gap-sml);
+    gap: var(--gap-md);
+    box-shadow: 0px 5px 22px var(--color-purple-900);
+}
+
+/* Styling the header*/
+
+.header{
+    display: flex;
+    align-items: center;
+    gap: var(--gap-sml);
+}
+
+img.header-img{
+    max-width: 30px;
+}
+
+h1{
+    font-size: var(--gap-lg);
+    color: var(--color-purple-900);
+}
+
+/* Styling the faq*/
+
+.faq-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-lg);
+    cursor: pointer;
+}
+
+h2{
+    font-size: var(--gap-sml);
+    font-weight: 600;
+    color: var(--color-purple-900);
+    cursor: pointer;
+    
+}
+
+h2:hover{
+    color: var(--color-purple-600);
+}
+
+p.faq-text{
+  color: var(--color-purple-600);
+  padding-block-start: var(--gap-sml);
+}
+
+
+button{
+    background-color: transparent;
+    border: none;
+    min-width: 30px;
+    min-height: 30px;
+    cursor: pointer;
+}
+
+
+.hidden{
+    display: none;
+}
