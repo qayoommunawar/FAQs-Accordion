@@ -6,17 +6,17 @@ const faqAnswer = document.querySelectorAll('.faq-text');
 
 faqHeader.forEach((header, index) => {
     header.addEventListener('click', () => {
-        const isVisible = !faqAnswer[index].classList.contains('hidden');
+        const isActive = faqAnswer[index].classList.contains('active');
 
-        // First: Hide all answers and reset icons
+        // First: Remove 'active' from all and reset icons
         faqAnswer.forEach((answer, i) => {
-            answer.classList.add('hidden');
+            answer.classList.remove('active');
             iconButton[i].src = 'assets/images/icon-plus.svg';
         });
 
-        // Then: Show only the clicked one if it was previously hidden
-        if (!isVisible) {
-            faqAnswer[index].classList.remove('hidden');
+        // Then: Add 'active' to the clicked one if it was not active
+        if (!isActive) {
+            faqAnswer[index].classList.add('active');
             iconButton[index].src = 'assets/images/icon-minus.svg';
         }
     });

@@ -153,6 +153,16 @@ h2:hover{
 p.faq-text{
   color: var(--color-purple-600);
   padding-block-start: var(--gap-sml);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 1s ease, opacity 1s ease;
+}
+
+
+p.faq-text.active {
+  max-height: 200px; 
+  opacity: 1;
 }
 
 
@@ -165,6 +175,6 @@ button{
 }
 
 
-.hidden{
+/* .hidden{
     display: none;
-}
+} */
